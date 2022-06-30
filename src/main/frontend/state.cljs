@@ -95,6 +95,7 @@
      :document/mode?                        document-mode?
 
      :config                                {}
+     :config/root-dir                       nil
      :block/component-editing-mode?         false
      :editor/draw-mode?                     false
      :editor/show-page-search?              false
@@ -300,6 +301,10 @@
   (or (:git/current-repo @state)
       (when-not (mobile-util/native-platform?)
         "local")))
+
+(defn get-root-dir
+  []
+  (:config/root-dir @state))
 
 (defn get-config
   ([]
