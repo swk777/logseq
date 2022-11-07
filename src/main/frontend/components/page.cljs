@@ -344,7 +344,7 @@
                   (= page-name (util/page-name-sanity-lc (date/journal-name))))
           *control-show? (::control-show? state)
           *all-collapsed? (::all-collapsed? state)]
-      [:div.flex-1.page.relative
+      [:div.flex-1.page.relative.journal
        (merge (if (seq (:block/tags page))
                 (let [page-names (model/get-page-names-by-ids (map :db/id (:block/tags page)))]
                   {:data-page-tags (text-util/build-data-value page-names)})
